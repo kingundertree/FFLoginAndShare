@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F80551491B034AE200A8DE49 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F80551481B034AE200A8DE49 /* main.m */; };
+		F805514C1B034AE200A8DE49 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F805514B1B034AE200A8DE49 /* AppDelegate.m */; };
+		F805514F1B034AE200A8DE49 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F805514E1B034AE200A8DE49 /* ViewController.m */; };
+		F80551521B034AE200A8DE49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F80551501B034AE200A8DE49 /* Main.storyboard */; };
+		F80551541B034AE200A8DE49 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F80551531B034AE200A8DE49 /* Images.xcassets */; };
+		F80551571B034AE200A8DE49 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80551551B034AE200A8DE49 /* LaunchScreen.xib */; };
+		F80551631B034AE200A8DE49 /* FFLoginAndShareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F80551621B034AE200A8DE49 /* FFLoginAndShareTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F805515D1B034AE200A8DE49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F805513B1B034AE200A8DE49 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F80551421B034AE200A8DE49;
+			remoteInfo = FFLoginAndShare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F80551431B034AE200A8DE49 /* FFLoginAndShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFLoginAndShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F80551471B034AE200A8DE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F80551481B034AE200A8DE49 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F805514A1B034AE200A8DE49 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F805514B1B034AE200A8DE49 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F805514D1B034AE200A8DE49 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F805514E1B034AE200A8DE49 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F80551511B034AE200A8DE49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F80551531B034AE200A8DE49 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F80551561B034AE200A8DE49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F805515C1B034AE200A8DE49 /* FFLoginAndShareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFLoginAndShareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F80551611B034AE200A8DE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F80551621B034AE200A8DE49 /* FFLoginAndShareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFLoginAndShareTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F80551401B034AE200A8DE49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F80551591B034AE200A8DE49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F805513A1B034AE200A8DE49 = {
+			isa = PBXGroup;
+			children = (
+				F80551451B034AE200A8DE49 /* FFLoginAndShare */,
+				F805515F1B034AE200A8DE49 /* FFLoginAndShareTests */,
+				F80551441B034AE200A8DE49 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F80551441B034AE200A8DE49 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F80551431B034AE200A8DE49 /* FFLoginAndShare.app */,
+				F805515C1B034AE200A8DE49 /* FFLoginAndShareTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F80551451B034AE200A8DE49 /* FFLoginAndShare */ = {
+			isa = PBXGroup;
+			children = (
+				F805516C1B034B0600A8DE49 /* FFLoginAndShare */,
+				F805514A1B034AE200A8DE49 /* AppDelegate.h */,
+				F805514B1B034AE200A8DE49 /* AppDelegate.m */,
+				F805514D1B034AE200A8DE49 /* ViewController.h */,
+				F805514E1B034AE200A8DE49 /* ViewController.m */,
+				F80551501B034AE200A8DE49 /* Main.storyboard */,
+				F80551531B034AE200A8DE49 /* Images.xcassets */,
+				F80551551B034AE200A8DE49 /* LaunchScreen.xib */,
+				F80551461B034AE200A8DE49 /* Supporting Files */,
+			);
+			path = FFLoginAndShare;
+			sourceTree = "<group>";
+		};
+		F80551461B034AE200A8DE49 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F80551471B034AE200A8DE49 /* Info.plist */,
+				F80551481B034AE200A8DE49 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F805515F1B034AE200A8DE49 /* FFLoginAndShareTests */ = {
+			isa = PBXGroup;
+			children = (
+				F80551621B034AE200A8DE49 /* FFLoginAndShareTests.m */,
+				F80551601B034AE200A8DE49 /* Supporting Files */,
+			);
+			path = FFLoginAndShareTests;
+			sourceTree = "<group>";
+		};
+		F80551601B034AE200A8DE49 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F80551611B034AE200A8DE49 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F805516C1B034B0600A8DE49 /* FFLoginAndShare */ = {
+			isa = PBXGroup;
+			children = (
+				F805516D1B034B0600A8DE49 /* Libs */,
+			);
+			path = FFLoginAndShare;
+			sourceTree = "<group>";
+		};
+		F805516D1B034B0600A8DE49 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F80551421B034AE200A8DE49 /* FFLoginAndShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F80551661B034AE200A8DE49 /* Build configuration list for PBXNativeTarget "FFLoginAndShare" */;
+			buildPhases = (
+				F805513F1B034AE200A8DE49 /* Sources */,
+				F80551401B034AE200A8DE49 /* Frameworks */,
+				F80551411B034AE200A8DE49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FFLoginAndShare;
+			productName = FFLoginAndShare;
+			productReference = F80551431B034AE200A8DE49 /* FFLoginAndShare.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F805515B1B034AE200A8DE49 /* FFLoginAndShareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F80551691B034AE200A8DE49 /* Build configuration list for PBXNativeTarget "FFLoginAndShareTests" */;
+			buildPhases = (
+				F80551581B034AE200A8DE49 /* Sources */,
+				F80551591B034AE200A8DE49 /* Frameworks */,
+				F805515A1B034AE200A8DE49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F805515E1B034AE200A8DE49 /* PBXTargetDependency */,
+			);
+			name = FFLoginAndShareTests;
+			productName = FFLoginAndShareTests;
+			productReference = F805515C1B034AE200A8DE49 /* FFLoginAndShareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F805513B1B034AE200A8DE49 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = FF;
+				TargetAttributes = {
+					F80551421B034AE200A8DE49 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					F805515B1B034AE200A8DE49 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = F80551421B034AE200A8DE49;
+					};
+				};
+			};
+			buildConfigurationList = F805513E1B034AE200A8DE49 /* Build configuration list for PBXProject "FFLoginAndShare" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F805513A1B034AE200A8DE49;
+			productRefGroup = F80551441B034AE200A8DE49 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F80551421B034AE200A8DE49 /* FFLoginAndShare */,
+				F805515B1B034AE200A8DE49 /* FFLoginAndShareTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F80551411B034AE200A8DE49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F80551521B034AE200A8DE49 /* Main.storyboard in Resources */,
+				F80551571B034AE200A8DE49 /* LaunchScreen.xib in Resources */,
+				F80551541B034AE200A8DE49 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F805515A1B034AE200A8DE49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F805513F1B034AE200A8DE49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F805514F1B034AE200A8DE49 /* ViewController.m in Sources */,
+				F805514C1B034AE200A8DE49 /* AppDelegate.m in Sources */,
+				F80551491B034AE200A8DE49 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F80551581B034AE200A8DE49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F80551631B034AE200A8DE49 /* FFLoginAndShareTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F805515E1B034AE200A8DE49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F80551421B034AE200A8DE49 /* FFLoginAndShare */;
+			targetProxy = F805515D1B034AE200A8DE49 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F80551501B034AE200A8DE49 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F80551511B034AE200A8DE49 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F80551551B034AE200A8DE49 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F80551561B034AE200A8DE49 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F80551641B034AE200A8DE49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F80551651B034AE200A8DE49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F80551671B034AE200A8DE49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FFLoginAndShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F80551681B034AE200A8DE49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FFLoginAndShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F805516A1B034AE200A8DE49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FFLoginAndShareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FFLoginAndShare.app/FFLoginAndShare";
+			};
+			name = Debug;
+		};
+		F805516B1B034AE200A8DE49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FFLoginAndShareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FFLoginAndShare.app/FFLoginAndShare";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F805513E1B034AE200A8DE49 /* Build configuration list for PBXProject "FFLoginAndShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F80551641B034AE200A8DE49 /* Debug */,
+				F80551651B034AE200A8DE49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F80551661B034AE200A8DE49 /* Build configuration list for PBXNativeTarget "FFLoginAndShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F80551671B034AE200A8DE49 /* Debug */,
+				F80551681B034AE200A8DE49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F80551691B034AE200A8DE49 /* Build configuration list for PBXNativeTarget "FFLoginAndShareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F805516A1B034AE200A8DE49 /* Debug */,
+				F805516B1B034AE200A8DE49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F805513B1B034AE200A8DE49 /* Project object */;
+}
