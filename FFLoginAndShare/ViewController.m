@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "FFLoginAndShareManager.h"
 #import "FFWeiboShareModel.h"
+#import "FFWechatShareModel.h"
 
 @interface ViewController ()
 @end
@@ -23,7 +24,7 @@
     for (NSInteger i = 0; i < 11; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.tag = i;
-        btn.frame = CGRectMake(0, 50+50*i, self.view.frame.size.width, 40);
+        btn.frame = CGRectMake(0, 40+40*i, self.view.frame.size.width, 35);
         btn.backgroundColor = [UIColor blackColor];
         [btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -39,19 +40,19 @@
         } else if (i == 3) {
             [btn setTitle:@"weibo link Share" forState:UIControlStateNormal];
         } else if (i == 4) {
-            [btn setTitle:@"weibo link Share" forState:UIControlStateNormal];
-        } else if (i == 5) {
             [btn setTitle:@"wechat friend text Share" forState:UIControlStateNormal];
-        } else if (i == 6) {
+        } else if (i == 5) {
             [btn setTitle:@"wechat friend image Share" forState:UIControlStateNormal];
+        } else if (i == 6) {
+            [btn setTitle:@"wechat friend link Share" forState:UIControlStateNormal];
         } else if (i == 7) {
-            [btn setTitle:@"wechat friend text link Share" forState:UIControlStateNormal];
-        } else if (i == 8) {
             [btn setTitle:@"wechat friendGroup text Share" forState:UIControlStateNormal];
-        } else if (i == 9) {
+        } else if (i == 8) {
             [btn setTitle:@"wechat friendGroup image Share" forState:UIControlStateNormal];
-        } else if (i == 10) {
+        } else if (i == 9) {
             [btn setTitle:@"wechat friendGroup link Share" forState:UIControlStateNormal];
+        } else if (i == 10) {
+            [btn setTitle:@"wechat Login" forState:UIControlStateNormal];
         }
     }
 }
@@ -110,7 +111,85 @@
             }
         }];
     } else if (btn.tag == 4) {
+        FFWechatShareModel *shareModel = [[FFWechatShareModel alloc] init];
+        shareModel.shareText = @"我们对食材的质量与安全的管控极不简单，而且苛刻而繁琐。从原产地寻找与合作，评估挑选追溯，实验室检测，多温区储藏到冷藏车配送。我们用欧洲的标准来管理这一切。这是我们每天的工作，不断重复，不断进步。";
+    
+        [[FFLoginAndShareManager shareInstance] thirdAppShare:ThirdAppTypeForWeichat shareContentType:WechatShareContTypeForFriendWithText shareInfo:shareModel shareResponseBlock:^(ThirdAppType appType, ThirdAppShareResponseStatus status, id shareCallBackInfo) {
+            if (status == ThirdAppShareResponseStatusForSuccuss) {
+                NSLog(@"微信好友文本分享成功");
+            } else {
+                NSLog(@"微信好友文本分享失败");
+            }
+        }];
+    } else if (btn.tag == 5) {
+        FFWechatShareModel *shareModel = [[FFWechatShareModel alloc] init];
+        shareModel.thumbImageFile = [[NSBundle mainBundle] pathForResource:@"1jpeg" ofType:@"jpg"];
+        shareModel.bigImageData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"1jpeg" ofType:@"jpg"]];
         
+        [[FFLoginAndShareManager shareInstance] thirdAppShare:ThirdAppTypeForWeichat shareContentType:WechatShareContTypeForFriendWithImage shareInfo:shareModel shareResponseBlock:^(ThirdAppType appType, ThirdAppShareResponseStatus status, id shareCallBackInfo) {
+            if (status == ThirdAppShareResponseStatusForSuccuss) {
+                NSLog(@"微信好友图片分享成功");
+            } else {
+                NSLog(@"微信好友图片分享失败");
+            }
+        }];
+    } else if (btn.tag == 6) {
+        FFWechatShareModel *shareModel = [[FFWechatShareModel alloc] init];
+        shareModel.title = @"kingundertree 博客";
+        shareModel.descriptionString = @"我们对食材的质量与安全的管控极不简单，而且苛刻而繁琐。从原产地寻找与合作，评估挑选追溯，实验室检测，多温区储藏到冷藏车配送。我们用欧洲的标准来管理这一切。这是我们每天的工作，不断重复，不断进步。";
+        shareModel.thumbImageFile = [[NSBundle mainBundle] pathForResource:@"1jpeg" ofType:@"jpg"];
+        shareModel.webpageUrl = @"http://tech.qq.com/zt2012/tmtdecode/252.htm";
+        
+        [[FFLoginAndShareManager shareInstance] thirdAppShare:ThirdAppTypeForWeichat shareContentType:WechatShareContTypeForFriendWithLink shareInfo:shareModel shareResponseBlock:^(ThirdAppType appType, ThirdAppShareResponseStatus status, id shareCallBackInfo) {
+            if (status == ThirdAppShareResponseStatusForSuccuss) {
+                NSLog(@"微信好友链接分享成功");
+            } else {
+                NSLog(@"微信好友链接分享失败");
+            }
+        }];
+    } else if (btn.tag == 7) {
+        FFWechatShareModel *shareModel = [[FFWechatShareModel alloc] init];
+        shareModel.shareText = @"我们对食材的质量与安全的管控极不简单，而且苛刻而繁琐。从原产地寻找与合作，评估挑选追溯，实验室检测，多温区储藏到冷藏车配送。我们用欧洲的标准来管理这一切。这是我们每天的工作，不断重复，不断进步。";
+        
+        [[FFLoginAndShareManager shareInstance] thirdAppShare:ThirdAppTypeForWeichat shareContentType:WechatShareContTypeForFriendGroupWithText shareInfo:shareModel shareResponseBlock:^(ThirdAppType appType, ThirdAppShareResponseStatus status, id shareCallBackInfo) {
+            if (status == ThirdAppShareResponseStatusForSuccuss) {
+                NSLog(@"微信朋友圈文本分享成功");
+            } else {
+                NSLog(@"微信朋友圈文本分享失败");
+            }
+        }];
+    } else if (btn.tag == 8) {
+        FFWechatShareModel *shareModel = [[FFWechatShareModel alloc] init];
+        shareModel.thumbImageFile = [[NSBundle mainBundle] pathForResource:@"1jpeg" ofType:@"jpg"];
+        shareModel.bigImageData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"1jpeg" ofType:@"jpg"]];
+        
+        [[FFLoginAndShareManager shareInstance] thirdAppShare:ThirdAppTypeForWeichat shareContentType:WechatShareContTypeForFriendGroupWithImage shareInfo:shareModel shareResponseBlock:^(ThirdAppType appType, ThirdAppShareResponseStatus status, id shareCallBackInfo) {
+            if (status == ThirdAppShareResponseStatusForSuccuss) {
+                NSLog(@"微信朋友圈图片分享成功");
+            } else {
+                NSLog(@"微信朋友圈图片分享失败");
+            }
+        }];
+    } else if (btn.tag == 9) {
+        FFWechatShareModel *shareModel = [[FFWechatShareModel alloc] init];
+        shareModel.title = @"kingundertree 博客";
+        shareModel.descriptionString = @"我们对食材的质量与安全的管控极不简单，而且苛刻而繁琐。从原产地寻找与合作，评估挑选追溯，实验室检测，多温区储藏到冷藏车配送。我们用欧洲的标准来管理这一切。这是我们每天的工作，不断重复，不断进步。";
+        shareModel.thumbImageFile = [[NSBundle mainBundle] pathForResource:@"1jpeg" ofType:@"jpg"];
+        shareModel.webpageUrl = @"http://tech.qq.com/zt2012/tmtdecode/252.htm";
+        
+        [[FFLoginAndShareManager shareInstance] thirdAppShare:ThirdAppTypeForWeichat shareContentType:WechatShareContTypeForFriendGroupWithLink shareInfo:shareModel shareResponseBlock:^(ThirdAppType appType, ThirdAppShareResponseStatus status, id shareCallBackInfo) {
+            if (status == ThirdAppShareResponseStatusForSuccuss) {
+                NSLog(@"微信朋友圈图片分享成功");
+            } else {
+                NSLog(@"微信朋友圈图片分享失败");
+            }
+        }];
+    } else if (btn.tag == 10) {        
+        [[FFLoginAndShareManager shareInstance] thirdAppLogin:ThirdAppTypeForWeichat loginInfo:self loginResponseBlock:^(ThirdAppType appType, ThirdAppLoginResponseStatus status, id loginCallBackInfo) {
+            if (appType == ThirdAppTypeForWeichat && status == ThirdAppLoginResponseStatusForSuccuss) {
+                NSLog(@"loginInfo--->>微信登录成功");
+            }
+        }];
     }
 }
 

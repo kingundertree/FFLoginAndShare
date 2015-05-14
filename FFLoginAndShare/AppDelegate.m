@@ -43,27 +43,16 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-#pragma mark - WeiboSDKDelegate
-- (void)didReceiveWeiboRequest:(WBBaseRequest *)request
-{
-    [[FFLoginAndShareManager shareInstance] handWeiboRequest:request];
-}
-
-- (void)didReceiveWeiboResponse:(WBBaseResponse *)response
-{
-    [[FFLoginAndShareManager shareInstance] handWeiboResponse:response];
-}
 
 #pragma mark - weibo opernUrl
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    return [WeiboSDK handleOpenURL:url delegate:self];
+    return [[FFLoginAndShareManager shareInstance] handleThirdUrl:url];
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    return [WeiboSDK handleOpenURL:url delegate:self ];
+    return [[FFLoginAndShareManager shareInstance] handleThirdUrl:url];
 }
-
 
 @end

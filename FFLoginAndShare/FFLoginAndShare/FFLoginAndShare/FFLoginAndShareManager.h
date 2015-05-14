@@ -61,8 +61,9 @@ typedef NS_ENUM(NSInteger, ThirdAppPayResponseStatus) {
 };
 
 
-@interface FFLoginAndShareManager : NSObject <WBHttpRequestDelegate>
+@interface FFLoginAndShareManager : NSObject <WeiboSDKDelegate,WBHttpRequestDelegate,WXApiDelegate>
 @property (nonatomic, strong) WBSendMessageToWeiboResponse *LoginWeiboResponse;
+@property (nonatomic, assign) ThirdAppType thirdApp;
 
 @property (nonatomic, copy) void(^loginResponseBlock)(ThirdAppType appType, ThirdAppLoginResponseStatus status, id loginCallBackInfo);
 @property (nonatomic, copy) void(^shareResponseBlock)(ThirdAppType appType, ThirdAppShareResponseStatus status, id shareCallBackInfo);
@@ -70,6 +71,7 @@ typedef NS_ENUM(NSInteger, ThirdAppPayResponseStatus) {
 
 
 + (instancetype)shareInstance;
+- (BOOL)handleThirdUrl:(NSURL *)url;
 
 // 第三方登录
 - (void)thirdAppLogin:(ThirdAppType)appType loginInfo:(id)loginInfo loginResponseBlock:(void(^)(ThirdAppType appType, ThirdAppLoginResponseStatus status, id loginCallBackInfo))loginResponseBlock;
