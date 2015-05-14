@@ -21,7 +21,7 @@
 		F8B0ADEB1B0439D100B77C6F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B0ADEA1B0439D100B77C6F /* ImageIO.framework */; };
 		F8B0ADED1B0439D800B77C6F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B0ADEC1B0439D800B77C6F /* MapKit.framework */; };
 		F8B0ADF21B043A0800B77C6F /* FFLoginAndShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B0ADF11B043A0800B77C6F /* FFLoginAndShareManager.m */; };
-		F8B0ADF61B044DB000B77C6F /* FFShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B0ADF51B044DB000B77C6F /* FFShareModel.m */; };
+		F8B0ADF61B044DB000B77C6F /* FFWeiboShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B0ADF51B044DB000B77C6F /* FFWeiboShareModel.m */; };
 		F8B0ADF81B04509C00B77C6F /* 1jpeg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F8B0ADF71B04509C00B77C6F /* 1jpeg.jpg */; };
 		F8B0AE1C1B047EA300B77C6F /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B0AE181B047EA300B77C6F /* libWeChatSDK.a */; };
 		F8B0AE1D1B047EA300B77C6F /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8B0AE191B047EA300B77C6F /* read_me.txt */; };
@@ -30,6 +30,7 @@
 		F8B0AE231B047EE300B77C6F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B0AE221B047EE300B77C6F /* libz.dylib */; };
 		F8B0AE251B047EEE00B77C6F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B0AE241B047EEE00B77C6F /* libsqlite3.0.dylib */; };
 		F8B0AE281B047F5800B77C6F /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B0AE261B047F3B00B77C6F /* libc++.dylib */; };
+		F8B0AE2B1B0480E700B77C6F /* FFWechatShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B0AE2A1B0480E700B77C6F /* FFWechatShareModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,8 +75,8 @@
 		F8B0ADEF1B043A0800B77C6F /* FFLoginAndShareConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFLoginAndShareConfig.h; sourceTree = "<group>"; };
 		F8B0ADF01B043A0800B77C6F /* FFLoginAndShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFLoginAndShareManager.h; sourceTree = "<group>"; };
 		F8B0ADF11B043A0800B77C6F /* FFLoginAndShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFLoginAndShareManager.m; sourceTree = "<group>"; };
-		F8B0ADF41B044DB000B77C6F /* FFShareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFShareModel.h; sourceTree = "<group>"; };
-		F8B0ADF51B044DB000B77C6F /* FFShareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFShareModel.m; sourceTree = "<group>"; };
+		F8B0ADF41B044DB000B77C6F /* FFWeiboShareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFWeiboShareModel.h; sourceTree = "<group>"; };
+		F8B0ADF51B044DB000B77C6F /* FFWeiboShareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFWeiboShareModel.m; sourceTree = "<group>"; };
 		F8B0ADF71B04509C00B77C6F /* 1jpeg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1jpeg.jpg; sourceTree = "<group>"; };
 		F8B0AE181B047EA300B77C6F /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		F8B0AE191B047EA300B77C6F /* read_me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read_me.txt; sourceTree = "<group>"; };
@@ -86,6 +87,8 @@
 		F8B0AE221B047EE300B77C6F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F8B0AE241B047EEE00B77C6F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		F8B0AE261B047F3B00B77C6F /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		F8B0AE291B0480E700B77C6F /* FFWechatShareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFWechatShareModel.h; sourceTree = "<group>"; };
+		F8B0AE2A1B0480E700B77C6F /* FFWechatShareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFWechatShareModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,8 +239,10 @@
 		F8B0ADF31B044D9C00B77C6F /* ShareModel */ = {
 			isa = PBXGroup;
 			children = (
-				F8B0ADF41B044DB000B77C6F /* FFShareModel.h */,
-				F8B0ADF51B044DB000B77C6F /* FFShareModel.m */,
+				F8B0ADF41B044DB000B77C6F /* FFWeiboShareModel.h */,
+				F8B0ADF51B044DB000B77C6F /* FFWeiboShareModel.m */,
+				F8B0AE291B0480E700B77C6F /* FFWechatShareModel.h */,
+				F8B0AE2A1B0480E700B77C6F /* FFWechatShareModel.m */,
 			);
 			name = ShareModel;
 			sourceTree = "<group>";
@@ -360,8 +365,9 @@
 				F805514F1B034AE200A8DE49 /* ViewController.m in Sources */,
 				F8B0ADF21B043A0800B77C6F /* FFLoginAndShareManager.m in Sources */,
 				F805514C1B034AE200A8DE49 /* AppDelegate.m in Sources */,
+				F8B0AE2B1B0480E700B77C6F /* FFWechatShareModel.m in Sources */,
 				F80551491B034AE200A8DE49 /* main.m in Sources */,
-				F8B0ADF61B044DB000B77C6F /* FFShareModel.m in Sources */,
+				F8B0ADF61B044DB000B77C6F /* FFWeiboShareModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

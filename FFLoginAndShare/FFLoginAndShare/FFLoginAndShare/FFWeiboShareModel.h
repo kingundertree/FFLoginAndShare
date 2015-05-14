@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FFShareModel : NSObject
+@interface FFWeiboShareModel : NSObject
 
 @property(nonatomic, strong) NSString *shareText;
 @property(nonatomic, strong) NSData *shareImageData;

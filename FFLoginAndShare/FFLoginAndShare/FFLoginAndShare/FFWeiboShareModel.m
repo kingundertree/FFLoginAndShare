@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 FF. All rights reserved.
 //
 
-#import "FFShareModel.h"
+#import "FFWeiboShareModel.h"
 
-@implementation FFShareModel
+@implementation FFWeiboShareModel
 
 @end

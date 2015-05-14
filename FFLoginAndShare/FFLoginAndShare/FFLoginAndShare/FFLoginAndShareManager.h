@@ -31,9 +31,12 @@ typedef NS_ENUM(NSInteger, ShareContentType) {
     WeiboShareContTypeForText = 0, //微博分享文本
     WeiboShareContTypeForImage = 1, //微博分享图片
     WeiboShareContTypeForLink = 2, //微博分享连接
-    WechatShareContTypeForFriend = 3, //微信好友分享
-    WechatShareContTypeForFriendGroup = 4 //微信朋友圈分享
-
+    WechatShareContTypeForFriendWithText = 3, //微信好友文本分享
+    WechatShareContTypeForFriendWithImage = 4, //微信好友图片分享
+    WechatShareContTypeForFriendWithLink = 5, //微信好友链接分享
+    WechatShareContTypeForFriendGroupWithText = 6, //微信朋友圈文本分享
+    WechatShareContTypeForFriendGroupWithImage = 7, //微信朋友圈文本分享
+    WechatShareContTypeForFriendGroupWithLink = 8 //微信朋友圈文本分享
 };
 
 typedef NS_ENUM(NSInteger, ThirdAppLoginResponseStatus) {

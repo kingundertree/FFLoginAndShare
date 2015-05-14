@@ -7,7 +7,8 @@
 //
 
 #import "FFLoginAndShareManager.h"
-#import "FFShareModel.h"
+#import "FFWeiboShareModel.h"
+#import "FFWechatShareModel.h"
 
 @implementation FFLoginAndShareManager
 
@@ -76,12 +77,28 @@
             [self shareWeiboWithImage:shareInfo];
 
             break;
-        case WechatShareContTypeForFriend:
-            [self shareWechatToFriend:shareInfo];
+        case WechatShareContTypeForFriendWithText:
+            [self shareWechatToFriendWithText:shareInfo];
+            
+            break;
+        case WechatShareContTypeForFriendWithImage:
+            [self shareWechatToFriendWithImage:shareInfo];
 
             break;
-        case WechatShareContTypeForFriendGroup:
-            [self shareWeiboToFriendGroup:shareInfo];
+        case WechatShareContTypeForFriendWithLink:
+            [self shareWechatToFriendWithLink:shareInfo];
+
+            break;
+        case WechatShareContTypeForFriendGroupWithText:
+            [self shareWechatToFriendGroupWithText:shareInfo];
+            
+            break;
+        case WechatShareContTypeForFriendGroupWithImage:
+            [self shareWechatToFriendGroupWithImage:shareInfo];
+
+            break;
+        case WechatShareContTypeForFriendGroupWithLink:
+            [self shareWechatToFriendGroupWithLink:shareInfo];
 
             break;
             
@@ -118,7 +135,7 @@
 
 #pragma mark - weibo text 分享
 - (void)shareWeiboWithText:(id)shareInfo {
-    FFShareModel *shareModel = (FFShareModel *)shareInfo;
+    FFWeiboShareModel *shareModel = (FFWeiboShareModel *)shareInfo;
     
     NSDictionary *userInfo = shareModel.userInfo;
     
@@ -128,9 +145,25 @@
     [self weiboShareHandle:message userInfo:userInfo];
 }
 
+#pragma mark - weibo 图片 分享
+- (void)shareWeiboWithImage:(id)shareInfo {
+    FFWeiboShareModel *shareModel = (FFWeiboShareModel *)shareInfo;
+    
+    NSDictionary *userInfo = shareModel.userInfo;
+    
+    WBMessageObject *message = [[WBMessageObject alloc] init];
+    message.text = shareModel.shareText;
+    WBImageObject *image = [WBImageObject object];
+    image.imageData = shareModel.shareImageData;
+    message.imageObject = image;
+    
+    [self weiboShareHandle:message userInfo:userInfo];
+}
+
+
 #pragma mark - weibo 链接 分享
 - (void)shareWeiboWithLink:(id)shareInfo {
-    FFShareModel *shareModel = (FFShareModel *)shareInfo;
+    FFWeiboShareModel *shareModel = (FFWeiboShareModel *)shareInfo;
     
     NSDictionary *userInfo = shareModel.userInfo;
     
@@ -147,28 +180,28 @@
     [self weiboShareHandle:message userInfo:userInfo];
 }
 
-#pragma mark - weibo 图片 分享
-- (void)shareWeiboWithImage:(id)shareInfo {
-    FFShareModel *shareModel = (FFShareModel *)shareInfo;
-    
-    NSDictionary *userInfo = shareModel.userInfo;
-    
-    WBMessageObject *message = [[WBMessageObject alloc] init];
-    message.text = shareModel.shareText;
-    WBImageObject *image = [WBImageObject object];
-    image.imageData = shareModel.shareImageData;
-    message.imageObject = image;
-    
-    [self weiboShareHandle:message userInfo:userInfo];
-}
-
-#pragma mark - 微信好友分享
-- (void)shareWechatToFriend:(id)shareInfo {
+#pragma mark - 微信好友文本分享
+- (void)shareWechatToFriendWithText:(id)shareInfo {
     
 }
-
-#pragma mark - weibo 图片 分享
-- (void)shareWeiboToFriendGroup:(id)shareInfo {
+#pragma mark - 微信好友图片分享
+- (void)shareWechatToFriendWithImage:(id)shareInfo {
+    
+}
+#pragma mark - 微信好友链接分享
+- (void)shareWechatToFriendWithLink:(id)shareInfo {
+    
+}
+#pragma mark - 微信朋友圈文本分享
+- (void)shareWechatToFriendGroupWithText:(id)shareInfo {
+    
+}
+#pragma mark - 微信朋友圈图片分享
+- (void)shareWechatToFriendGroupWithImage:(id)shareInfo {
+    
+}
+#pragma mark - 微信朋友圈链接分享
+- (void)shareWechatToFriendGroupWithLink:(id)shareInfo {
     
 }
 

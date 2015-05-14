@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "FFLoginAndShareManager.h"
-#import "FFShareModel.h"
+#import "FFWeiboShareModel.h"
 
 @interface ViewController ()
 @end
@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view, typically from a nib.
 
 
-    for (NSInteger i = 0; i < 4; i++) {
+    for (NSInteger i = 0; i < 11; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.tag = i;
         btn.frame = CGRectMake(0, 50+50*i, self.view.frame.size.width, 40);
@@ -38,6 +38,20 @@
             [btn setTitle:@"weibo image Share" forState:UIControlStateNormal];
         } else if (i == 3) {
             [btn setTitle:@"weibo link Share" forState:UIControlStateNormal];
+        } else if (i == 4) {
+            [btn setTitle:@"weibo link Share" forState:UIControlStateNormal];
+        } else if (i == 5) {
+            [btn setTitle:@"wechat friend text Share" forState:UIControlStateNormal];
+        } else if (i == 6) {
+            [btn setTitle:@"wechat friend image Share" forState:UIControlStateNormal];
+        } else if (i == 7) {
+            [btn setTitle:@"wechat friend text link Share" forState:UIControlStateNormal];
+        } else if (i == 8) {
+            [btn setTitle:@"wechat friendGroup text Share" forState:UIControlStateNormal];
+        } else if (i == 9) {
+            [btn setTitle:@"wechat friendGroup image Share" forState:UIControlStateNormal];
+        } else if (i == 10) {
+            [btn setTitle:@"wechat friendGroup link Share" forState:UIControlStateNormal];
         }
     }
 }
@@ -56,7 +70,7 @@
             }
         }];
     } else if (btn.tag == 1) {
-        FFShareModel *shareModel = [[FFShareModel alloc] init];
+        FFWeiboShareModel *shareModel = [[FFWeiboShareModel alloc] init];
         shareModel.shareText = @"我来啦~FF";
         
         [[FFLoginAndShareManager shareInstance] thirdAppShare:ThirdAppTypeForWeibo shareContentType:WeiboShareContTypeForText shareInfo:shareModel shareResponseBlock:^(ThirdAppType appType, ThirdAppShareResponseStatus status, id shareCallBackInfo) {
@@ -67,7 +81,7 @@
             }
         }];
     } else if (btn.tag == 2) {
-        FFShareModel *shareModel = [[FFShareModel alloc] init];
+        FFWeiboShareModel *shareModel = [[FFWeiboShareModel alloc] init];
         shareModel.shareText = @"我来啦~FF";
         shareModel.shareImageData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"1jpeg" ofType:@"jpg"]];
         
@@ -80,7 +94,7 @@
         }];
     } else if (btn.tag == 3) {
         // 暂时有问题
-        FFShareModel *shareModel = [[FFShareModel alloc] init];
+        FFWeiboShareModel *shareModel = [[FFWeiboShareModel alloc] init];
         shareModel.shareText = @"我来啦~FF";
         shareModel.objectID = @"identifier";
         shareModel.title = @"FFShare";
@@ -95,6 +109,8 @@
                 NSLog(@"连接分享失败");
             }
         }];
+    } else if (btn.tag == 4) {
+        
     }
 }
 
