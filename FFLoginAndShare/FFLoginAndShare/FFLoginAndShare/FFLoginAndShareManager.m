@@ -34,6 +34,9 @@
     // 微博sdk初始化
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:WeiboAppKey];
+    
+    // 微信初始化
+    [WXApi registerApp:@"wxd930ea5d5a258f4f" withDescription:@"demo 2.0"];
 }
 
 #pragma mark - method

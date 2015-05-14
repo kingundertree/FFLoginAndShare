@@ -10,6 +10,7 @@
 #import "WBHttpRequest.h"
 #import "FFLoginAndShareConfig.h"
 #import "WeiboSDK.h"
+#import "WXApi.h"
 
 typedef NS_ENUM(NSInteger, ThirdAppActionType) {
     ThirdAppActionTypeForLogin = 0, //第三方app操作登录

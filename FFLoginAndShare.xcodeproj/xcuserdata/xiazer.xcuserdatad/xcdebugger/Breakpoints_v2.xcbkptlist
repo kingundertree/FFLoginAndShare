@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFLoginAndShare/FFLoginAndShare/FFLoginAndShare/FFLoginAndShareManager.m"
-            timestampString = "453268869.312709"
+            timestampString = "453279706.800566"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
             landmarkName = "-request:didFailWithError:"
             landmarkType = "5">
          </BreakpointContent>

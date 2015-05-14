@@ -13,5 +13,7 @@
 #define WeiboAppKey  @"2045436852"
 #define WeiboRedirectURI  @"http://www.sina.com"
 
+#define WechatAppKey @"wxd930ea5d5a258f4f"
+
 
 #endif

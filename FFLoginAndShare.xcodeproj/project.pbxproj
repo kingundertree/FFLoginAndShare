@@ -23,6 +23,13 @@
 		F8B0ADF21B043A0800B77C6F /* FFLoginAndShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B0ADF11B043A0800B77C6F /* FFLoginAndShareManager.m */; };
 		F8B0ADF61B044DB000B77C6F /* FFShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B0ADF51B044DB000B77C6F /* FFShareModel.m */; };
 		F8B0ADF81B04509C00B77C6F /* 1jpeg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F8B0ADF71B04509C00B77C6F /* 1jpeg.jpg */; };
+		F8B0AE1C1B047EA300B77C6F /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B0AE181B047EA300B77C6F /* libWeChatSDK.a */; };
+		F8B0AE1D1B047EA300B77C6F /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8B0AE191B047EA300B77C6F /* read_me.txt */; };
+		F8B0AE1F1B047ECD00B77C6F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B0AE1E1B047ECD00B77C6F /* UIKit.framework */; };
+		F8B0AE211B047ED800B77C6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B0AE201B047ED800B77C6F /* Foundation.framework */; };
+		F8B0AE231B047EE300B77C6F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B0AE221B047EE300B77C6F /* libz.dylib */; };
+		F8B0AE251B047EEE00B77C6F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B0AE241B047EEE00B77C6F /* libsqlite3.0.dylib */; };
+		F8B0AE281B047F5800B77C6F /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B0AE261B047F3B00B77C6F /* libc++.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +77,15 @@
 		F8B0ADF41B044DB000B77C6F /* FFShareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFShareModel.h; sourceTree = "<group>"; };
 		F8B0ADF51B044DB000B77C6F /* FFShareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFShareModel.m; sourceTree = "<group>"; };
 		F8B0ADF71B04509C00B77C6F /* 1jpeg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1jpeg.jpg; sourceTree = "<group>"; };
+		F8B0AE181B047EA300B77C6F /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		F8B0AE191B047EA300B77C6F /* read_me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read_me.txt; sourceTree = "<group>"; };
+		F8B0AE1A1B047EA300B77C6F /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		F8B0AE1B1B047EA300B77C6F /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		F8B0AE1E1B047ECD00B77C6F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F8B0AE201B047ED800B77C6F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F8B0AE221B047EE300B77C6F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F8B0AE241B047EEE00B77C6F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		F8B0AE261B047F3B00B77C6F /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,10 +93,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B0AE281B047F5800B77C6F /* libc++.dylib in Frameworks */,
+				F8B0AE251B047EEE00B77C6F /* libsqlite3.0.dylib in Frameworks */,
+				F8B0AE231B047EE300B77C6F /* libz.dylib in Frameworks */,
+				F8B0AE211B047ED800B77C6F /* Foundation.framework in Frameworks */,
+				F8B0AE1F1B047ECD00B77C6F /* UIKit.framework in Frameworks */,
 				F8B0ADED1B0439D800B77C6F /* MapKit.framework in Frameworks */,
 				F8B0ADEB1B0439D100B77C6F /* ImageIO.framework in Frameworks */,
 				F82A0CD71B03607B00018719 /* SystemConfiguration.framework in Frameworks */,
 				F8B0ADE81B04395000B77C6F /* libWeiboSDK.a in Frameworks */,
+				F8B0AE1C1B047EA300B77C6F /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,9 +155,14 @@
 		F80551461B034AE200A8DE49 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F8B0AE261B047F3B00B77C6F /* libc++.dylib */,
+				F8B0AE241B047EEE00B77C6F /* libsqlite3.0.dylib */,
+				F8B0AE221B047EE300B77C6F /* libz.dylib */,
 				F82A0CD61B03607B00018719 /* SystemConfiguration.framework */,
 				F8B0ADEC1B0439D800B77C6F /* MapKit.framework */,
 				F8B0ADEA1B0439D100B77C6F /* ImageIO.framework */,
+				F8B0AE201B047ED800B77C6F /* Foundation.framework */,
+				F8B0AE1E1B047ECD00B77C6F /* UIKit.framework */,
 				F80551471B034AE200A8DE49 /* Info.plist */,
 				F80551481B034AE200A8DE49 /* main.m */,
 			);
@@ -171,6 +198,7 @@
 		F8B0ADDB1B04395000B77C6F /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				F8B0AE171B047EA300B77C6F /* libWechatSDK1.5 */,
 				F8B0ADDC1B04395000B77C6F /* libWeiboSDK */,
 			);
 			path = Libs;
@@ -197,8 +225,8 @@
 		F8B0ADEE1B043A0800B77C6F /* FFLoginAndShare */ = {
 			isa = PBXGroup;
 			children = (
-				F8B0ADF31B044D9C00B77C6F /* ShareModel */,
 				F8B0ADEF1B043A0800B77C6F /* FFLoginAndShareConfig.h */,
+				F8B0ADF31B044D9C00B77C6F /* ShareModel */,
 				F8B0ADF01B043A0800B77C6F /* FFLoginAndShareManager.h */,
 				F8B0ADF11B043A0800B77C6F /* FFLoginAndShareManager.m */,
 			);
@@ -212,6 +240,17 @@
 				F8B0ADF51B044DB000B77C6F /* FFShareModel.m */,
 			);
 			name = ShareModel;
+			sourceTree = "<group>";
+		};
+		F8B0AE171B047EA300B77C6F /* libWechatSDK1.5 */ = {
+			isa = PBXGroup;
+			children = (
+				F8B0AE181B047EA300B77C6F /* libWeChatSDK.a */,
+				F8B0AE191B047EA300B77C6F /* read_me.txt */,
+				F8B0AE1A1B047EA300B77C6F /* WXApi.h */,
+				F8B0AE1B1B047EA300B77C6F /* WXApiObject.h */,
+			);
+			path = libWechatSDK1.5;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +339,7 @@
 				F80551541B034AE200A8DE49 /* Images.xcassets in Resources */,
 				F80551821B035D5F00A8DE49 /* Images-2.xcassets in Resources */,
 				F8B0ADF81B04509C00B77C6F /* 1jpeg.jpg in Resources */,
+				F8B0AE1D1B047EA300B77C6F /* read_me.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +495,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FFLoginAndShare/FFLoginAndShare/Libs/libWeiboSDK",
+					"$(PROJECT_DIR)/FFLoginAndShare/FFLoginAndShare/Libs/libWechatSDK1.5",
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -473,6 +514,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FFLoginAndShare/FFLoginAndShare/Libs/libWeiboSDK",
+					"$(PROJECT_DIR)/FFLoginAndShare/FFLoginAndShare/Libs/libWechatSDK1.5",
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
