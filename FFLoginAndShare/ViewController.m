@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view, typically from a nib.
 
 
-    for (NSInteger i = 0; i < 11; i++) {
+    for (NSInteger i = 0; i < 13; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.tag = i;
         btn.frame = CGRectMake(0, 40+40*i, self.view.frame.size.width, 35);
@@ -53,6 +53,10 @@
             [btn setTitle:@"wechat friendGroup link Share" forState:UIControlStateNormal];
         } else if (i == 10) {
             [btn setTitle:@"wechat Login" forState:UIControlStateNormal];
+        } else if (i == 11) {
+            [btn setTitle:@"wechat pay" forState:UIControlStateNormal];
+        } else if (i == 12) {
+            [btn setTitle:@"alipay pay" forState:UIControlStateNormal];
         }
     }
 }
@@ -188,6 +192,26 @@
         [[FFLoginAndShareManager shareInstance] thirdAppLogin:ThirdAppTypeForWeichat loginInfo:self loginResponseBlock:^(ThirdAppType appType, ThirdAppLoginResponseStatus status, id loginCallBackInfo) {
             if (appType == ThirdAppTypeForWeichat && status == ThirdAppLoginResponseStatusForSuccuss) {
                 NSLog(@"loginInfo--->>微信登录成功");
+            }
+        }];
+    } else if (btn.tag == 11) {
+        [[FFLoginAndShareManager shareInstance] thirdAppPay:ThirdAppTypeForWeichat payInfo:nil payResponseBlock:^(ThirdAppType appType, ThirdAppPayResponseStatus status, id payCallBackInfo) {
+            if (appType == ThirdAppTypeForWeichat &&status == ThirdAppPayResponseStatusForSuccuss) {
+                NSLog(@"微信支付成功");
+            } else if (appType == ThirdAppTypeForWeichat &&status == ThirdAppPayResponseStatusForUserCancle) {
+                NSLog(@"微信支付用户取消");
+            } else {
+                NSLog(@"微信支付失败");
+            }
+        }];
+    } else if (btn.tag == 12) {
+        [[FFLoginAndShareManager shareInstance] thirdAppPay:ThirdAppTypeForAlypay payInfo:nil payResponseBlock:^(ThirdAppType appType, ThirdAppPayResponseStatus status, id payCallBackInfo) {
+            if (appType == ThirdAppTypeForAlypay &&status == ThirdAppPayResponseStatusForSuccuss) {
+                NSLog(@"支付宝支付成功");
+            } else if (appType == ThirdAppTypeForAlypay &&status == ThirdAppPayResponseStatusForUserCancle) {
+                NSLog(@"支付宝支付用户取消");
+            } else {
+                NSLog(@"支付宝支付失败");
             }
         }];
     }
