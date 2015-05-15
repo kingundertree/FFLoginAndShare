@@ -119,7 +119,11 @@
 }
 // 第三方支付
 - (void)thirdAppPay:(ThirdAppType)appType payInfo:(id)payInfo payResponseBlock:(void(^)(ThirdAppType appType, ThirdAppPayResponseStatus status, id payCallBackInfo))payResponseBlock {
-    
+    if (appType == ThirdAppTypeForWeichat) {
+        [self payWithWechat:payInfo];
+    } else if (appType == ThirdAppTypeForAlypay) {
+        [self payWithAlipay:payInfo];
+    }
 }
 
 
@@ -308,8 +312,48 @@
     [WXApi sendReq:req];
 }
 
+#pragma mark - 微信支付
+- (void)payWithAlipay:(id)payInfo {
+//    FFAlipayPayModel *payModel = (FFAlipayPayModel *)payInfo;
+    
+    __weak typeof(self) this = self;
+    [[AlipaySDK defaultService] payOrder:@"" fromScheme:AlipayAppScheme callback:^(NSDictionary *resultDic) {
+        NSLog(@"resultDic--->>%@",resultDic);
+        ThirdAppPayResponseStatus payResponseStatus = ThirdAppPayResponseStatusForFail;
+        
+        if ([resultDic[@"resultStatus"] isEqualToString:@"9000"]) { //订单支付成功
+            payResponseStatus = ThirdAppPayResponseStatusForSuccuss;
+        } else if ([resultDic[@"resultStatus"] isEqualToString:@"8000"]) { //正在处理中
+            payResponseStatus = ThirdAppPayResponseStatusForProcessing;
+        } else if ([resultDic[@"resultStatus"] isEqualToString:@"4000"]) { //订单支付失败
+            payResponseStatus = ThirdAppPayResponseStatusForFail;
+        } else if ([resultDic[@"resultStatus"] isEqualToString:@"6001"]) { //用户中途取消
+            payResponseStatus = ThirdAppPayResponseStatusForUserCancle;
+        } else if ([resultDic[@"resultStatus"] isEqualToString:@"6002"]) { //网络连接出错
+            payResponseStatus = ThirdAppPayResponseStatusForNetFail;
+        }
+       
+        if (this.payResponseBlock) {
+            this.payResponseBlock(ThirdAppTypeForAlypay, payResponseStatus, resultDic);
+        }
+    }];
+}
 
-#pragma mark - weibo share method 
+#pragma mark - 支付宝支付
+- (void)payWithWechat:(id)payInfo {
+    NSDictionary *dic = (NSDictionary *)payInfo;
+
+    PayReq *request = [[PayReq alloc] init];
+    request.partnerId =  dic[@"partnerid"];
+    request.prepayId  =  dic[@"prepayid"];
+    request.package = dic[@"package"];
+    request.nonceStr= dic[@"noncestr"];
+    request.timeStamp = [dic[@"timestamp"] doubleValue];
+    request.sign= dic[@"sign"];
+    [WXApi sendReq:request];
+}
+
+#pragma mark - weibo share method
 - (void)weiboShareHandle:(WBMessageObject *)messageObject userInfo:(NSDictionary *)userInfo{
     WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
     authRequest.redirectURI = WeiboRedirectURI;
@@ -331,36 +375,32 @@
 - (void)handWeiboResponse:(WBBaseResponse *)response {
     if ([response isKindOfClass:WBSendMessageToWeiboResponse.class]) {
         WBSendMessageToWeiboResponse* sendMessageToWeiboResponse = (WBSendMessageToWeiboResponse*)response;
+        ThirdAppShareResponseStatus status = ThirdAppShareResponseStatusForOhers;
         if (sendMessageToWeiboResponse.statusCode == WeiboSDKResponseStatusCodeSuccess) {
-            if (self.shareResponseBlock) {
-                self.shareResponseBlock(ThirdAppTypeForWeibo, ThirdAppShareResponseStatusForSuccuss,sendMessageToWeiboResponse);
-            }
+            status = ThirdAppShareResponseStatusForSuccuss;
         } else if (sendMessageToWeiboResponse.statusCode == WeiboSDKResponseStatusCodeUserCancel) {
-            if (self.shareResponseBlock) {
-                self.shareResponseBlock(ThirdAppTypeForWeibo, ThirdAppShareResponseStatusForUserCancle,sendMessageToWeiboResponse);
-            }
+            status = ThirdAppShareResponseStatusForUserCancle;
         } else {
-            if (self.shareResponseBlock) {
-                self.shareResponseBlock(ThirdAppTypeForWeibo, ThirdAppShareResponseStatusForFail,sendMessageToWeiboResponse);
-            }
+            status = ThirdAppShareResponseStatusForFail;
+        }
+        if (self.shareResponseBlock) {
+            self.shareResponseBlock(ThirdAppTypeForWeibo, status,sendMessageToWeiboResponse);
         }
     } else if ([response isKindOfClass:WBAuthorizeResponse.class]) {
         // 登录验证
         WBSendMessageToWeiboResponse *sendMessageToWeiboResponse = (WBSendMessageToWeiboResponse*)response;
-        
+        ThirdAppLoginResponseStatus status = ThirdAppLoginResponseStatusForOhers;
         if (sendMessageToWeiboResponse.statusCode == WeiboSDKResponseStatusCodeSuccess) {
+            status = ThirdAppLoginResponseStatusForOhers;
             self.LoginWeiboResponse = sendMessageToWeiboResponse;
-            if (self.loginResponseBlock) {
-                self.loginResponseBlock(ThirdAppTypeForWeibo, ThirdAppLoginResponseStatusForSuccuss,sendMessageToWeiboResponse);
-            }
         } else if (sendMessageToWeiboResponse.statusCode == WeiboSDKResponseStatusCodeUserCancel) {
-            if (self.loginResponseBlock) {
-                self.loginResponseBlock(ThirdAppTypeForWeibo, ThirdAppLoginResponseStatusForUserCancle,sendMessageToWeiboResponse);
-            }
+            status = ThirdAppLoginResponseStatusForOhers;
         } else {
-            if (self.loginResponseBlock) {
-                self.loginResponseBlock(ThirdAppTypeForWeibo, ThirdAppLoginResponseStatusForFail,sendMessageToWeiboResponse);
-            }
+            status = ThirdAppLoginResponseStatusForOhers;
+
+        }
+        if (self.loginResponseBlock) {
+            self.loginResponseBlock(ThirdAppTypeForWeibo, status,sendMessageToWeiboResponse);
         }
     } else if ([response isKindOfClass:WBPaymentResponse.class]) {
 //        WBSendMessageToWeiboResponse* sendMessageToWeiboResponse = (WBSendMessageToWeiboResponse*)response;
@@ -406,37 +446,52 @@
 
 -(void) onResp:(BaseResp*)resp {
     if([resp isKindOfClass:[SendMessageToWXResp class]]) {
-        if (resp.errCode == WXSuccess) {
-            if (self.shareResponseBlock) {
-                self.shareResponseBlock(ThirdAppTypeForWeichat, ThirdAppShareResponseStatusForSuccuss, nil);
-            }
-        } else if (resp.errCode == WXErrCodeUserCancel) {
-            if (self.shareResponseBlock) {
-                self.shareResponseBlock(ThirdAppTypeForWeichat, ThirdAppShareResponseStatusForUserCancle, nil);
-            }            
+        SendMessageToWXResp *temp = (SendMessageToWXResp*)resp;
+        ThirdAppShareResponseStatus sendStatus = ThirdAppShareResponseStatusForOhers;
+        
+        if (temp.errCode == WXSuccess) {
+            sendStatus = ThirdAppShareResponseStatusForSuccuss;
+        } else if (temp.errCode == WXErrCodeUserCancel) {
+            sendStatus = ThirdAppShareResponseStatusForUserCancle;
         } else {
-            if (self.shareResponseBlock) {
-                self.shareResponseBlock(ThirdAppTypeForWeichat, ThirdAppShareResponseStatusForFail, nil);
-            }            
+            sendStatus = ThirdAppShareResponseStatusForFail;
+        }
+        if (self.shareResponseBlock) {
+            self.shareResponseBlock(ThirdAppTypeForWeichat, sendStatus, temp);
         }
     } else if([resp isKindOfClass:[SendAuthResp class]]) {
-        SendAuthResp *temp = (SendAuthResp*)resp;
-
+        SendAuthResp *temp = (SendAuthResp *)resp;
+        
+        ThirdAppLoginResponseStatus sendStatus = ThirdAppLoginResponseStatusForOhers;
         if (temp.errCode == WXSuccess) {
-            if (self.loginResponseBlock) {
-                self.loginResponseBlock(ThirdAppTypeForWeichat, ThirdAppLoginResponseStatusForSuccuss, temp.code);
-            }
+            sendStatus = ThirdAppLoginResponseStatusForSuccuss;
         } else if (temp.errCode == WXErrCodeUserCancel) {
-            if (self.loginResponseBlock) {
-                self.loginResponseBlock(ThirdAppTypeForWeichat, ThirdAppLoginResponseStatusForSuccuss, nil);
-            }
+            sendStatus = ThirdAppLoginResponseStatusForUserCancle;
         } else {
-            if (self.loginResponseBlock) {
-                self.loginResponseBlock(ThirdAppTypeForWeichat, ThirdAppLoginResponseStatusForSuccuss, nil);
-            }
+            sendStatus = ThirdAppLoginResponseStatusForFail;
+        }
+        if (self.loginResponseBlock) {
+            self.loginResponseBlock(ThirdAppTypeForWeichat, sendStatus, temp);
         }
     } else if ([resp isKindOfClass:[AddCardToWXCardPackageResp class]]) {
     
+    } else if ([resp isKindOfClass:[PayReq class]]) {
+        PayResp *temp = (PayResp *)resp;
+        
+        ThirdAppPayResponseStatus payResponse = ThirdAppPayResponseStatusForOhers;
+        if (temp.errCode == WXSuccess) {
+            payResponse = ThirdAppPayResponseStatusForSuccuss;
+        } else if (temp.errCode == WXErrCodeUserCancel) {
+            payResponse = ThirdAppPayResponseStatusForUserCancle;
+        } else if (temp.errCode == WXErrCodeSentFail) {
+            payResponse = ThirdAppPayResponseStatusForFail;
+        } else {
+            payResponse = ThirdAppPayResponseStatusForOhers;
+        }
+        
+        if (self.payResponseBlock) {
+            self.payResponseBlock(ThirdAppTypeForWeichat,payResponse,temp);
+        }
     }
 }
 

@@ -9,56 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "WBHttpRequest.h"
 #import "FFLoginAndShareConfig.h"
-#import "WeiboSDK.h"
-#import "WXApi.h"
-
-typedef NS_ENUM(NSInteger, ThirdAppActionType) {
-    ThirdAppActionTypeForLogin = 0, //第三方app操作登录
-    ThirdAppActionTypeForShare = 1, //第三方app操作分享
-    ThirdAppActionTypeForPay = 2 //第三方app操作支付
-};
-
-
-typedef NS_ENUM(NSUInteger, ThirdAppType) {
-    ThirdAppTypeForWeibo = 0, // 第三方App微博
-    ThirdAppTypeForMobileQQ = 1, // 第三方App手机QQ
-    ThirdAppTypeForWeichat = 2, // 第三方App微信
-    ThirdAppTypeForAlypay = 3 // 第三方App支付宝
-};
-
-
-typedef NS_ENUM(NSInteger, ShareContentType) {
-    WeiboShareContTypeForText = 0, //微博分享文本
-    WeiboShareContTypeForImage = 1, //微博分享图片
-    WeiboShareContTypeForLink = 2, //微博分享连接
-    WechatShareContTypeForFriendWithText = 3, //微信好友文本分享
-    WechatShareContTypeForFriendWithImage = 4, //微信好友图片分享
-    WechatShareContTypeForFriendWithLink = 5, //微信好友链接分享
-    WechatShareContTypeForFriendGroupWithText = 6, //微信朋友圈文本分享
-    WechatShareContTypeForFriendGroupWithImage = 7, //微信朋友圈文本分享
-    WechatShareContTypeForFriendGroupWithLink = 8 //微信朋友圈文本分享
-};
-
-typedef NS_ENUM(NSInteger, ThirdAppLoginResponseStatus) {
-    ThirdAppLoginResponseStatusForSuccuss = 0, //登录成功
-    ThirdAppLoginResponseStatusForUserCancle = 1, //用户取消登录
-    ThirdAppLoginResponseStatusForFail = 2, //登录失败
-    ThirdAppLoginResponseStatusForOhers = 3 //其他
-};
-
-typedef NS_ENUM(NSInteger, ThirdAppShareResponseStatus) {
-    ThirdAppShareResponseStatusForSuccuss = 0, //分享成功
-    ThirdAppShareResponseStatusForUserCancle = 1, //用户取消分享
-    ThirdAppShareResponseStatusForFail = 2, //分享失败
-    ThirdAppShareResponseStatusForOhers = 3 //其他
-};
-
-typedef NS_ENUM(NSInteger, ThirdAppPayResponseStatus) {
-    ThirdAppPayResponseStatusForSuccuss = 0, //支付成功
-    ThirdAppPayResponseStatusForUserCancle = 1, //用户取消支付
-    ThirdAppPayResponseStatusForFail = 2, //支付失败
-    ThirdAppPayResponseStatusForOhers = 3 //其他
-};
 
 
 @interface FFLoginAndShareManager : NSObject <WeiboSDKDelegate,WBHttpRequestDelegate,WXApiDelegate>

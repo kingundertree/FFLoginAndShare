@@ -15,6 +15,9 @@
 		F80551571B034AE200A8DE49 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80551551B034AE200A8DE49 /* LaunchScreen.xib */; };
 		F80551631B034AE200A8DE49 /* FFLoginAndShareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F80551621B034AE200A8DE49 /* FFLoginAndShareTests.m */; };
 		F80551821B035D5F00A8DE49 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F80551811B035D5F00A8DE49 /* Images-2.xcassets */; };
+		F80C299D1B0598980087188F /* FFAlipayPayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F80C299C1B0598980087188F /* FFAlipayPayModel.m */; };
+		F80C2B771B059FE20087188F /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F80C2B751B059FE20087188F /* AlipaySDK.bundle */; };
+		F80C2B781B059FE20087188F /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80C2B761B059FE20087188F /* AlipaySDK.framework */; };
 		F82A0CD71B03607B00018719 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82A0CD61B03607B00018719 /* SystemConfiguration.framework */; };
 		F8B0ADE81B04395000B77C6F /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B0ADDD1B04395000B77C6F /* libWeiboSDK.a */; };
 		F8B0ADE91B04395000B77C6F /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8B0ADE51B04395000B77C6F /* WeiboSDK.bundle */; };
@@ -58,6 +61,10 @@
 		F80551611B034AE200A8DE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F80551621B034AE200A8DE49 /* FFLoginAndShareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFLoginAndShareTests.m; sourceTree = "<group>"; };
 		F80551811B035D5F00A8DE49 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		F80C299B1B0598980087188F /* FFAlipayPayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAlipayPayModel.h; sourceTree = "<group>"; };
+		F80C299C1B0598980087188F /* FFAlipayPayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAlipayPayModel.m; sourceTree = "<group>"; };
+		F80C2B751B059FE20087188F /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		F80C2B761B059FE20087188F /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		F82A0CD61B03607B00018719 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F8B0ADDD1B04395000B77C6F /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
 		F8B0ADDE1B04395000B77C6F /* WBHttpRequest+WeiboShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboShare.h"; sourceTree = "<group>"; };
@@ -102,6 +109,7 @@
 				F8B0AE211B047ED800B77C6F /* Foundation.framework in Frameworks */,
 				F8B0AE1F1B047ECD00B77C6F /* UIKit.framework in Frameworks */,
 				F8B0ADED1B0439D800B77C6F /* MapKit.framework in Frameworks */,
+				F80C2B781B059FE20087188F /* AlipaySDK.framework in Frameworks */,
 				F8B0ADEB1B0439D100B77C6F /* ImageIO.framework in Frameworks */,
 				F82A0CD71B03607B00018719 /* SystemConfiguration.framework in Frameworks */,
 				F8B0ADE81B04395000B77C6F /* libWeiboSDK.a in Frameworks */,
@@ -189,6 +197,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F80C2B741B059FE20087188F /* libAlipaySDK */ = {
+			isa = PBXGroup;
+			children = (
+				F80C2B751B059FE20087188F /* AlipaySDK.bundle */,
+				F80C2B761B059FE20087188F /* AlipaySDK.framework */,
+			);
+			path = libAlipaySDK;
+			sourceTree = "<group>";
+		};
 		F8B0ADDA1B04394000B77C6F /* FFLoginAndShare */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +218,7 @@
 		F8B0ADDB1B04395000B77C6F /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				F80C2B741B059FE20087188F /* libAlipaySDK */,
 				F8B0AE171B047EA300B77C6F /* libWechatSDK1.5 */,
 				F8B0ADDC1B04395000B77C6F /* libWeiboSDK */,
 			);
@@ -243,6 +261,8 @@
 				F8B0ADF51B044DB000B77C6F /* FFWeiboShareModel.m */,
 				F8B0AE291B0480E700B77C6F /* FFWechatShareModel.h */,
 				F8B0AE2A1B0480E700B77C6F /* FFWechatShareModel.m */,
+				F80C299B1B0598980087188F /* FFAlipayPayModel.h */,
+				F80C299C1B0598980087188F /* FFAlipayPayModel.m */,
 			);
 			name = ShareModel;
 			sourceTree = "<group>";
@@ -340,6 +360,7 @@
 			files = (
 				F80551521B034AE200A8DE49 /* Main.storyboard in Resources */,
 				F80551571B034AE200A8DE49 /* LaunchScreen.xib in Resources */,
+				F80C2B771B059FE20087188F /* AlipaySDK.bundle in Resources */,
 				F8B0ADE91B04395000B77C6F /* WeiboSDK.bundle in Resources */,
 				F80551541B034AE200A8DE49 /* Images.xcassets in Resources */,
 				F80551821B035D5F00A8DE49 /* Images-2.xcassets in Resources */,
@@ -365,6 +386,7 @@
 				F805514F1B034AE200A8DE49 /* ViewController.m in Sources */,
 				F8B0ADF21B043A0800B77C6F /* FFLoginAndShareManager.m in Sources */,
 				F805514C1B034AE200A8DE49 /* AppDelegate.m in Sources */,
+				F80C299D1B0598980087188F /* FFAlipayPayModel.m in Sources */,
 				F8B0AE2B1B0480E700B77C6F /* FFWechatShareModel.m in Sources */,
 				F80551491B034AE200A8DE49 /* main.m in Sources */,
 				F8B0ADF61B044DB000B77C6F /* FFWeiboShareModel.m in Sources */,
@@ -494,6 +516,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FFLoginAndShare/FFLoginAndShare/Libs/libAlipaySDK",
+				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = FFLoginAndShare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -502,6 +528,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FFLoginAndShare/FFLoginAndShare/Libs/libWeiboSDK",
 					"$(PROJECT_DIR)/FFLoginAndShare/FFLoginAndShare/Libs/libWechatSDK1.5",
+					"$(PROJECT_DIR)/FFLoginAndShare/FFLoginAndShare/Libs/libAlipaySDK",
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -513,6 +540,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FFLoginAndShare/FFLoginAndShare/Libs/libAlipaySDK",
+				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = FFLoginAndShare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -521,6 +552,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FFLoginAndShare/FFLoginAndShare/Libs/libWeiboSDK",
 					"$(PROJECT_DIR)/FFLoginAndShare/FFLoginAndShare/Libs/libWechatSDK1.5",
+					"$(PROJECT_DIR)/FFLoginAndShare/FFLoginAndShare/Libs/libAlipaySDK",
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";

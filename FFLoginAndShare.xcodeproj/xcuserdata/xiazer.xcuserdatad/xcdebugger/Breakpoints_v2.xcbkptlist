@@ -26,44 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFLoginAndShare/FFLoginAndShare/FFLoginAndShare/FFLoginAndShareManager.m"
-            timestampString = "453291003.92604"
+            timestampString = "453353484.715129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "398"
-            endingLineNumber = "398"
+            startingLineNumber = "462"
+            endingLineNumber = "462"
             landmarkName = "-onReq:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FFLoginAndShare/FFLoginAndShare/FFLoginAndShare/FFLoginAndShareManager.m"
-            timestampString = "453291003.92604"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "408"
-            endingLineNumber = "408"
-            landmarkName = "-onResp:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FFLoginAndShare/FFLoginAndShare/FFLoginAndShare/FFLoginAndShareManager.m"
-            timestampString = "453291003.92604"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "-loginWeichat:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
