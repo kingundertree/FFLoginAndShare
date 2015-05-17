@@ -28,7 +28,6 @@
         btn.backgroundColor = [UIColor blackColor];
         [btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         
-        
         [self.view addSubview:btn];
         
         if (i == 0) {
